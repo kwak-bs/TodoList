@@ -18,5 +18,7 @@
 - Unsplash API 사용 (배경사진)
 - OpenWeather API 사용 (날씨)
 - LocalStorage 활용
+- gh-pages 배포
+- navigator.geolocation.getCurrentPosition()  // 위치 정보 권한 허용
 
 [구경가기](https://kwak-bs.github.io/momentum/)
