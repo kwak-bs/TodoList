@@ -8,14 +8,13 @@
   appearance: none;
   background: none;
   border: none;
-  color: white;
+
   font-size: 36px;
   border-bottom: 3px solid rgba(255, 255, 255, 0.8);
   margin-bottom: 20px;
 }
 
 .center .name__input::placeholder {
-  color: white;
   opacity: 0.7;
 }
 
