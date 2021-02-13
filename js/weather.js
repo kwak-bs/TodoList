@@ -31,7 +31,7 @@ function getWeather(coordsObj) {
       weatherTemp.innerText = `${Math.floor(
         temperature
       )}° , feels like : ${feels_like}°, humidity : ${humidity}%`;
-      weatherPlace.innerText = `${place}`;
+      weatherPlace.innerText = `@${place}`;
     });
 }
 
