@@ -1,0 +1,9 @@
+.mainTodo {
+  text-align: center;
+}
+
+.main__input:focus,
+.main__input:active {
+  outline: none;
+  color: var(--text-color);
+}
