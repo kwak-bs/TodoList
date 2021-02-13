@@ -1,3 +1,10 @@
 .clock {
-  font-size: 8rem;
+  position: absolute;
+  top: 2%;
+  font-size: 4rem;
+}
+
+.clock .date__text {
+  font-size: 1rem;
+  text-align: center;
 }
