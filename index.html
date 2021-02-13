@@ -8,57 +8,58 @@
   </head>
 
   <body>
-    
+    <!-- 시간/날짜 ,음악 정보 ,이름 ,main todo -->
     <section class="center">
-
+      <!-- 시간 / 날짜 -->
       <div class="js-clock clock">
         <h3 class="clock__text">00:00</h3>
         <h4 class="date__text"></h4>
       </div>
-
+      <!-- 음악 정보 -->
       <div class="music__info">
         <div class="music__effects"></div>
         <p class="music__title"></p>
       </div>
-      
-      <div class="js-name name"></div>
-      <div>
-        <form class="js-to-do to-do">
-          <input class="js-add-to-do to-do__add-to-do" type="text" placeholder="할 일을 작성해보세요!"/>
-        </form>
-        <ul class="js-list list"></ul>
+
+      <!-- 이름, Main todo -->
+      <div class="js-user">
+        <div class="js-name name"></div>
+        <div class="js-mainTodo mainTodo">
+        </div>
       </div>
     </section>
     
-    <div class="js-weather weather">
-    </div>
+    <!-- 날씨 정보 -->
+    <div class="js-weather weather"></div>
 
+    <!-- 다크 모드 -->
     <span class="darkmode-btn">🌕</span>
 
+    <!-- 음악 탭 -->
     <div class="js-musics musics">
       <div class="music1">
-        <audio class="music" src="sound/AJR - 100 Bad Days.mp3"></audio>
+        <audio class="music" src="sound/AJR_-_100 Bad Days.mp3"></audio>
       </div>
       <div class="music2">
-        <audio class="music" src="sound/lIlBOI - CREDIT.mp3"></audio>
+        <audio class="music" src="sound/lIlBOI_-_CREDIT.mp3"></audio>
       </div>
       <div class="music3">
-        <audio class="music" src="sound/Park Hyosin - Home.mp3"></audio>
+        <audio class="music" src="sound/ParkHyosin_-_Home.mp3"></audio>
       </div>
       <div class="music4">
-        <audio class="music" src="sound/Guy Sebastian - Choir.mp3"></audio>
+        <audio class="music" src="sound/GuySebastian_-_Choir.mp3"></audio>
       </div>
       <div class="music5">
-        <audio class="music" src="sound/Mullally - Sweet Coffee.mp3"></audio>
+        <audio class="music" src="sound/Mullally_-_Sweet Coffee.mp3"></audio>
       </div>
     </div>
 
 
     <script src="js/clock.js"></script>
     <script src="js/greeting.js"></script>
-    <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/darkmode.js"></script>
     <script src="js/bgm.js"></script>
+    <script src="js/mainTodo.js"></script>
   </body>
 </html>
