@@ -1,0 +1,38 @@
+.js-user {
+  margin-top: 15rem;
+}
+
+.name__input {
+  appearance: none;
+  background: none;
+  border: none;
+
+  font-size: 2rem;
+  border-bottom: 3px solid var(--text-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.name__input::placeholder {
+  opacity: 0.8;
+}
+
+.name__input:focus,
+.name__input:active {
+  outline: none;
+  color: var(--text-color);
+}
+
+.name__text {
+  font-size: 2rem;
+}
+
+.name {
+  margin-bottom: 2rem;
+}
+
+.Name__button {
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 22px;
+}
