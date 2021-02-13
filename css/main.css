@@ -5,6 +5,26 @@
   --color-light: white;
   --background: white;
   --text-color: black;
+  
+  --music-1: #fcf6f0;
+  --music-1-light: #fcf6f0;
+  --music-1-dark: #ff784b;
+
+  --music-2: #ff9e9d;
+  --music-2-light: #ff9e9d;
+  --music-2-dark: #da463c;
+
+  --music-3: #aecbd9;
+  --music-3-light: #aecbd9;
+  --music-3-dark: #3948b1;
+
+  --music-4: #9c99a2;
+  --music-4-light: #9c99a2;
+  --music-4-dark: #1d1d1f;
+
+  --music-5: #e2f4de;
+  --music-5-light: #e2f4de;
+  --music-5-dark: #50976a;
 }
 
 html, body{
@@ -30,16 +50,26 @@ body {
   :root {
     --color-mode: 'dark';
   }
-  
+  /* 다크 모드가 아니면(화이트 모드면) 배경은 검정, 텍스트는 흰색 */
   :root:not([data-user-color-scheme]) {
     --background: var(--color-dark);
     --text-color: var(--color-light);
+    --music-1 : var(--music-1-light);
+    --music-2 : var(--music-2-light);
+    --music-3 : var(--music-3-light);
+    --music-4 : var(--music-4-light);
+    --music-5 : var(--music-5-light);
   }
 }
 
 [data-user-color-scheme="dark"] {
   --background: var(--color-dark);
   --text-color: var(--color-light);
+  --music-1 : var(--music-1-dark);
+  --music-2 : var(--music-2-dark);
+  --music-3 : var(--music-3-dark);
+  --music-4 : var(--music-4-dark);
+  --music-5 : var(--music-5-dark);
 }
 
 h1,
@@ -64,7 +94,7 @@ input {
   background: none;
   appearance: none;
   border: 0;
-  font-size: 22px;
+  font-size: 1.5rem;
 
   border-bottom: 2px solid var(--text-color);
 }

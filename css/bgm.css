@@ -16,29 +16,29 @@
   z-index: 2;
 }
 
-
 .music1 {
-  background: rgb(178, 32, 112);
-}
-
-.music2 {
-  background: rgb(214, 141, 30);
+  background: var(--music-1);
 }
 
 .music3 {
-  background: rgb(64, 55, 196);
+  background: var(--music-3);
+}
+
+
+.music2 {
+  background: var(--music-2);
 }
 
 .music4 {
-  background: rgb(4, 184, 13);
+  background: var(--music-4);
 }
 
 .music5 {
-  background: rgb(216, 55, 189);
+  background: var(--music-5);
 }
 
+
 .music__effects > div {
-  position: absolute;
   width: 4rem;
   height: 4rem;
   z-index: 1;
@@ -50,12 +50,14 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 25%;
 }
-
+.music__info .music__effects {
+  margin-bottom: 3rem;
+}
 .music__title{
   color: grey;
 }
+
 
 @keyframes animation { 
   0% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
