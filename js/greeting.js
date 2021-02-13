@@ -5,7 +5,7 @@ function paintName(name) {
   nameContainer.innerHTML = "";
   const title = document.createElement("span");
   title.className = "name__text";
-  title.innerHTML = `안녕하세요, ${name}님.`;
+  title.innerHTML = `${name}님. 행운을 빕니다. `;
 
   const deleteName = document.createElement("span");
   deleteName.innerHTML = "🚫";
