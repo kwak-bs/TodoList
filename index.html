@@ -10,10 +10,17 @@
   <body>
     
     <section class="center">
+
       <div class="js-clock clock">
         <h3 class="clock__text">00:00</h3>
+        <h4 class="date__text"></h4>
       </div>
 
+      <div class="music__info">
+        <div class="music__effects"></div>
+        <p class="music__title"></p>
+      </div>
+      
       <div class="js-name name"></div>
       <div>
         <form class="js-to-do to-do">
@@ -28,10 +35,30 @@
 
     <span class="darkmode-btn">🌕</span>
 
+    <div class="js-musics musics">
+      <div class="music1">
+        <audio class="music" src="sound/AJR - 100 Bad Days.mp3"></audio>
+      </div>
+      <div class="music2">
+        <audio class="music" src="sound/lIlBOI - CREDIT.mp3"></audio>
+      </div>
+      <div class="music3">
+        <audio class="music" src="sound/Park Hyosin - Home.mp3"></audio>
+      </div>
+      <div class="music4">
+        <audio class="music" src="sound/Guy Sebastian - Choir.mp3"></audio>
+      </div>
+      <div class="music5">
+        <audio class="music" src="sound/Mullally - Sweet Coffee.mp3"></audio>
+      </div>
+    </div>
+
+
     <script src="js/clock.js"></script>
     <script src="js/greeting.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/darkmode.js"></script>
+    <script src="js/bgm.js"></script>
   </body>
 </html>
