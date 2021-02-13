@@ -1,5 +1,14 @@
 const weather = document.querySelector(".js-weather");
 
+const weatherTemp = document.createElement("p");
+weatherTemp.className = "weather-temperature";
+
+const weatherPlace = document.createElement("p");
+weatherPlace.className = "weather-place";
+
+weather.appendChild(weatherPlace);
+weather.appendChild(weatherTemp);
+
 //OpenWeather API 키 가져옴
 const API_KEY = "b94dda977bd60bb0acb1bba7d9f2a81a";
 const WEATHER_API = "https://api.openweathermap.org/data/2.5/weather?";
@@ -12,9 +21,17 @@ function getWeather(coordsObj) {
     .then((response) => response.json()) // 데이터가 우리한테 넘어 왔을때(데이터가 완전히 들어온 다음 호출), 화살표 함수
     .then(function (json) {
       // response.json()도 pending(대기) 완료 되면 json 불러옴.
+
       const temperature = json.main.temp; // 온도 저장
       const place = json.name; // 위치 저장
-      weather.innerText = `${Math.floor(temperature)}° @ ${place}`; // span에 넣어주기
+      const feels_like = json.main.feels_like;
+      const humidity = json.main.humidity;
+      //weather.innerText = `${Math.floor(temperature)}° @ ${place}`; // span에 넣어주기
+
+      weatherTemp.innerText = `${Math.floor(
+        temperature
+      )}° , feels like : ${feels_like}°, humidity : ${humidity}%`;
+      weatherPlace.innerText = `${place}`;
     });
 }
 

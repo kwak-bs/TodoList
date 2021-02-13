@@ -1,8 +1,16 @@
 .weather {
   position: absolute;
   font-style: italic;
-  font-size: 1.3rem;
   position: absolute;
-  top: 25px;
-  right: 25px;
+  bottom: 0%;
+  left: 1%;
+}
+
+.weather-place {
+  font-size: 0.8rem;
+  margin-bottom: -2%;
+}
+
+.weather-temperature {
+  font-size: 0.6rem;
 }
