@@ -1,0 +1,18 @@
+.done-todo {
+  opacity: .7;
+  padding: 3px 0px 2px;
+  padding-left: 21px;
+
+}
+
+.done-todo-checkbox{
+  margin-right: 10px;
+}
+
+.done-todo-label{
+  opacity: .5;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: line-through;
+  line-height: 1.25;
+}
