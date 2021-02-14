@@ -59,11 +59,17 @@
       <div class="todo-container-wrapper">
         <div class="js-todoContainer todo-container">
           <header class="js-todoHeader todo-header">
-
+            <div class="js-tab-list tab-list tab_active" data-tabnum="0">
+              <a href="#">To do</a>
+            </div>
+            <div class="js-tab-list tab-list" data-tabnum="1">
+              <a href="#">Done</a>
+            </div>
           </header>
 
           <div class="js-todoContent todo-content">
-            <ul id="list"></ul>
+            <ul id="todo-list" class="todoList"></ul>
+            <ul id="done-list" class="todoList"></ul>
           </div>
 
           <footer class="js-todoInput todo-input">
@@ -85,5 +91,7 @@
     <script src="js/bgm.js"></script>
     <script src="js/mainTodo.js"></script>
     <script src="js/todo.js"></script>
+    <script src="js/done.js"></script>
+    <script src="js/tab.js"></script>
   </body>
 </html>
