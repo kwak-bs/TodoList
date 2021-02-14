@@ -1,12 +1,42 @@
-.list {
-  margin-bottom: 20px;
+.todo {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 10%;
+  right: 1%;
+  z-index: 3;
+  font-weight: bolder;
+  font-size: large;
 }
 
-.toDo {
-  font-size: 22px;
+.todo-container-wrapper {
+  margin-bottom: 10px;
+}
+.todo-container {
+  height: 300px;
+  width: 320px;
+  background: var(--text-color);
+  max-height: 100vw;
+  max-width: 100vw;
+  min-width: 200px;
+  border-radius: 10px;
 }
 
-.toDo__button {
-  margin-right: 10px;
+.nipple {
+  position: absolute;
+  right: 15px;
+  background:var(--text-color);
+  z-index: 3;
+  border-left: 7px solid var(--background);
+  border-right: 7px solid var(--background);
+  border-top: 10px solid var(--text-color);
+}
+
+.todo-h3 {
+  text-align: end;
   cursor: pointer;
+}
+
+.hidden {
+  visibility: hidden;
 }
