@@ -92,7 +92,6 @@ h6 {
 
 input {
   background: none;
-  appearance: none;
   border: 0;
   font-size: 1.5rem;
 
@@ -111,8 +110,4 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-}
-
-ul {
-  margin-top: 50px;
 }
