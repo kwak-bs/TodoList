@@ -9,7 +9,9 @@ const todoContainer = document.querySelector(".js-todoContainer");
 const inputForm = document.getElementById("inputForm");
 const inputTodo = document.getElementById("inputTodo");
 
-const list = document.getElementById("list");
+const todoList = document.getElementById("todo-list");
+
+const header = document.querySelector(".js-todoHeader");
 
 let toDos = [];
 
@@ -23,6 +25,27 @@ function onSubmit(event) {
   inputTodo.value = "";
 
   addToDo(value);
+}
+
+function handleDelete(event) {
+  //console.dir(event.target)에서 parentNode찾으면 부모 찾을수 있음.
+  //console.dir(event.target);
+  //console.log(event.target.parentNode);
+  const target = event.target;
+
+  const li = target.parentElement;
+  const ul = li.parentElement;
+  const toDoId = li.id;
+
+  ul.removeChild(li); // 삭제
+
+  toDos = toDos.filter(function (toDo) {
+    //filter는 array의 모든 아이템을 통해 함수를 실행하고
+    //true인 아이템들만 가지고 새로운 array를 만든다.
+    return toDo.id !== parseInt(toDoId) + 1; //toDoId는 0부터 기준이다. 근데 toDo.id는 1부터 id를 잡기 때문에 +1 해줘야한다.
+  });
+
+  persistToDos();
 }
 
 let idNum = 0;
@@ -45,7 +68,7 @@ function addToDo(text) {
 
   toDo.appendChild(checkbox);
   toDo.appendChild(label);
-  list.appendChild(toDo);
+  todoList.appendChild(toDo);
 
   saveToDo(text);
 }
@@ -71,6 +94,7 @@ function persistToDos() {
 
 function loadToDos() {
   const loadedToDos = localStorage.getItem("toDos");
+  const doneToDos = localStorage.getItem("dones");
 
   if (loadedToDos !== null) {
     const parsedToDos = JSON.parse(loadedToDos);
@@ -85,7 +109,18 @@ function loadToDos() {
 function init() {
   loadToDos();
 }
+
 init();
 
 inputForm.addEventListener("submit", onSubmit);
 todoH3.addEventListener("click", todoClick);
+
+// 체크된 것들 done.js로 이동
+todoList.addEventListener("click", function (e) {
+  const element = e.target;
+  if (element.value) {
+    const value = element.value;
+    handleDelete(e);
+    addDoneToDo(value);
+  }
+});
