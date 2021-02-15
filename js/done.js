@@ -44,6 +44,7 @@ function addDoneToDo(text, doneTime, isLoad) {
   donetoDo.id = doneIdNum;
 
   const stringDones = localStorage.getItem("dones");
+  let TempDones = [];
 
   if (stringDones) {
     TempDones = JSON.parse(stringDones);
