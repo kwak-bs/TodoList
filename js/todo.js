@@ -51,6 +51,9 @@ function handleDelete(event) {
 let idNum = 0;
 
 function addToDo(text) {
+  if (!text) {
+    return;
+  }
   const toDo = document.createElement("li");
   toDo.className = "toDo";
   toDo.id = idNum;
@@ -94,11 +97,10 @@ function persistToDos() {
 
 function loadToDos() {
   const loadedToDos = localStorage.getItem("toDos");
-  const doneToDos = localStorage.getItem("dones");
 
   if (loadedToDos !== null) {
     const parsedToDos = JSON.parse(loadedToDos);
-
+    idNum = parsedToDos.length;
     parsedToDos.forEach(function (toDo) {
       addToDo(toDo.value);
     });
@@ -120,6 +122,7 @@ todoList.addEventListener("click", function (e) {
   const element = e.target;
   if (element.value) {
     const value = element.value;
+
     handleDelete(e);
     addDoneToDo(value);
   }
