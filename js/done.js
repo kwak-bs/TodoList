@@ -2,7 +2,6 @@ const doneList = document.getElementById("done-list");
 
 let dones = [];
 let doneIdNum = 0;
-let flag = false;
 
 function handleDoneDelete(event) {
   //console.dir(event.target)에서 parentNode찾으면 부모 찾을수 있음.
@@ -17,7 +16,6 @@ function handleDoneDelete(event) {
   // event.tartget은 이벤트 버블링의 가장 마지막에 위치한 최하위의 요소를 반환한다.
   // 하지만 여기선 최하위만 반환되는게 아니여서 이슈가 발생했다.
   const span = event.currentTarget;
-
   const li = span.parentElement;
   const ul = li.parentElement;
   const doneId = li.id;
@@ -33,51 +31,45 @@ function handleDoneDelete(event) {
   persistDoneToDos();
 }
 
-function getTime() {
-  const now = new Date();
-  const month = now.getMonth() + 1;
-  const _date = now.getDate();
+function addDoneToDo(text, doneTime, isLoad) {
+  let timeFlag = true;
 
-  const time = {
-    month,
-    _date,
-  };
-
-  localStorage.setItem("donetime", JSON.stringify(time));
-}
-
-function addDoneToDo(text) {
-  const savedDonetime = localStorage.getItem("donetime");
-
-  const now = new Date();
-  const nowMonth = now.getMonth() + 1;
-  const nowDate = now.getDate();
+  if (!doneTime) {
+    return;
+  }
+  const { month, _day, hour } = doneTime;
 
   const donetoDo = document.createElement("li");
   donetoDo.className = "done-todo";
   donetoDo.id = doneIdNum;
 
-  if (savedDonetime === null) {
-    flag = false;
-    getTime();
-    const doneTime = document.createElement("h5");
-    doneTime.className = "done-time";
-    doneTime.innerText = `${nowMonth}월 ${nowDate}일`;
-    doneList.appendChild(doneTime);
-  } else {
-    const parsedDoneTime = JSON.parse(savedDonetime);
+  const stringDones = localStorage.getItem("dones");
 
-    const { month, _date } = parsedDoneTime;
-    if (month !== nowMonth && _date !== nowDate) {
-      flag = false;
-    }
-    if (!flag) {
-      flag = true;
-      const doneTime = document.createElement("h5");
-      doneTime.className = "done-time";
-      doneTime.innerText = `${month}월 ${_date}일`;
-      doneList.appendChild(doneTime);
-    }
+  if (stringDones) {
+    TempDones = JSON.parse(stringDones);
+
+    Array.prototype.forEach.call(TempDones, function (done) {
+      const { month: arrMonth, _day: arrDay, hour: arrHour } = done.doneTime;
+
+      // 배열 객체에 같은 시간이 존재하면 flag = false;
+      if (hour === arrHour && month === arrMonth && _day === arrDay) {
+        timeFlag = false;
+      }
+    });
+  }
+
+  // 첫 번째 로드될때는 시간이 무조건 추가 되야함
+  if (doneIdNum === TempDones.length && isLoad) {
+    timeFlag = true;
+  }
+  console.log(timeFlag);
+
+  // timeFlag = true일때만 시간 추가(h3)
+  if (timeFlag) {
+    const done_Time = document.createElement("h5");
+    done_Time.className = "done-time";
+    done_Time.innerText = `${month}월 ${_day}일 ${hour}시`;
+    doneList.appendChild(done_Time);
   }
 
   const checkbox = document.createElement("input");
@@ -106,13 +98,14 @@ function addDoneToDo(text) {
   donetoDo.appendChild(BtnContainer);
   doneList.appendChild(donetoDo);
 
-  saveDoneToDo(text);
+  saveDoneToDo(text, doneTime);
 }
 
-function saveDoneToDo(text) {
+function saveDoneToDo(text, doneTime) {
   const donetoDoObject = {
     id: doneIdNum,
     value: text,
+    doneTime,
   };
 
   dones.push(donetoDoObject);
@@ -135,7 +128,7 @@ function loadDoneToDos() {
     const parsedDoneToDos = JSON.parse(doneToDos);
     doneIdNum = parsedDoneToDos.length;
     parsedDoneToDos.forEach(function (doneTodo) {
-      addDoneToDo(doneTodo.value);
+      addDoneToDo(doneTodo.value, doneTodo.doneTime, true);
     });
   }
   return;
