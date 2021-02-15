@@ -3,7 +3,7 @@ window.addEventListener("load", () => {
   const musics = document.querySelectorAll(".musics div");
   const effects = document.querySelector(".music__effects");
   const title = document.querySelector(".music__title");
-
+  const colors = ["#fcf6f0", "#ff9e9d", "#aecbd9", "#9c99a2", "#e2f4de"];
   musics.forEach((music, index) => {
     music.addEventListener("click", function () {
       audios.forEach((idx) => {
@@ -29,14 +29,14 @@ window.addEventListener("load", () => {
   });
 
   const createAnimations = (index) => {
-    const color = getComputedStyle(document.documentElement).getPropertyValue(
-      `--music-${index + 1}`
-    );
+    // const color = getComputedStyle(document.documentElement).getPropertyValue(
+    //   `--music-${index + 1}`
+    // );
 
     effects.innerHTML = "";
     const bubble = document.createElement("div");
     effects.appendChild(bubble);
-    bubble.style.backgroundColor = color;
+    bubble.style.backgroundColor = colors[index];
     bubble.style.animation = "animation 2000ms linear infinite both";
     bubble.style.position = "relative";
   };
