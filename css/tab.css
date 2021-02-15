@@ -15,6 +15,10 @@
   color: var(--background);
 }
 
+.tab-list a:hover {
+  opacity: .5;
+}
+
 .tab-list.tab_active { 
   background: var(--text-color);
 }

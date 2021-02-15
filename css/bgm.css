@@ -19,22 +19,37 @@
 .music1 {
   background: #fcf6f0;
 }
+.music1:hover {
+  opacity: 0.5;
+}
 
 .music2 {
   background: #ff9e9d;
 }
+.music2:hover {
+  opacity: 0.5;
+}
 
 .music3 {
   background: #aecbd9;
+}
+.music3:hover {
+  opacity: 0.5;
 }
 
 
 .music4 {
   background: #9c99a2;
 }
+.music4:hover {
+  opacity: 0.5;
+}
 
 .music5 {
   background: #e2f4de;
+}
+.music5:hover {
+  opacity: 0.5;
 }
 
 
