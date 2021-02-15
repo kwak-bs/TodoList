@@ -17,24 +17,24 @@
 }
 
 .music1 {
-  background: var(--music-1);
+  background: #fcf6f0;
+}
+
+.music2 {
+  background: #ff9e9d;
 }
 
 .music3 {
-  background: var(--music-3);
+  background: #aecbd9;
 }
 
-
-.music2 {
-  background: var(--music-2);
-}
 
 .music4 {
-  background: var(--music-4);
+  background: #9c99a2;
 }
 
 .music5 {
-  background: var(--music-5);
+  background: #e2f4de;
 }
 
 
