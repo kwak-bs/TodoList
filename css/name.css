@@ -29,10 +29,17 @@
 
 .name {
   margin-bottom: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .Name__button {
   margin-left: 10px;
   cursor: pointer;
   font-size: 22px;
+}
+
+.edit-name-container {
+  opacity: .6;
+  cursor: pointer;
+  font-size: 16px;
 }
