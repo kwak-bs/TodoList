@@ -2,8 +2,32 @@
   text-align: center;
 }
 
+.main__text {
+  display: inline-block;
+}
+
+.main__input {
+  width: 100%;
+  opacity: .5;
+  text-align: center;
+  margin-top: 20px;
+}
 .main__input:focus,
 .main__input:active {
   outline: none;
   color: var(--text-color);
 }
+
+.edit-main-container {
+  cursor: pointer;
+  position: relative;
+  left: 1rem;
+  font-size: 15px;
+  opacity: .7;
+}
+
+.maintodo__text {
+  position: relative;
+  top: 1rem;
+}
+
