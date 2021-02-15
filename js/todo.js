@@ -124,6 +124,16 @@ todoList.addEventListener("click", function (e) {
     const value = element.value;
 
     handleDelete(e);
-    addDoneToDo(value);
+
+    const now = new Date();
+    const doneTime = {
+      month: now.getMonth() + 1,
+      _day: now.getDate(),
+      hour: now.getHours(),
+    };
+    // isLoad를 같이 보내서 이게 새로고침 하여 로드되어 지는 것인지
+    // 아님 To do에서 체크를 해서 보내지는 것인지 확인한다.
+    const isLoad = false;
+    addDoneToDo(value, doneTime, isLoad);
   }
 });
