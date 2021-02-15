@@ -7,13 +7,17 @@ function paintName(name) {
   title.className = "name__text";
   title.innerHTML = `${name}님. 행운을 빕니다. `;
 
-  const deleteName = document.createElement("span");
-  deleteName.innerHTML = "🚫";
-  deleteName.className = "Name__button";
-  deleteName.addEventListener("click", handleNameDelete);
+  const editNameContainer = document.createElement("span");
+  editNameContainer.className = "edit-name-container";
+
+  const editNameBtn = document.createElement("i");
+  editNameBtn.className = "fas fa-user-edit";
+
+  editNameContainer.appendChild(editNameBtn);
+  editNameContainer.addEventListener("click", handleNameDelete);
 
   nameContainer.appendChild(title);
-  nameContainer.appendChild(deleteName);
+  nameContainer.appendChild(editNameContainer);
 }
 
 // 하 처음에 handleDelete()로 이름 지었다가, 만들자마자 삭제가 안되는 이슈가 발생해서 삽질좀함.

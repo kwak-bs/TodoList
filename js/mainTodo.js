@@ -7,17 +7,21 @@ function paintMain(mainTodo) {
   today.className = "main__text";
   today.innerText = `TODAY`;
 
-  const deleteMain = document.createElement("span");
-  deleteMain.innerHTML = "🚫";
-  deleteMain.className = "Main__button";
-  deleteMain.addEventListener("click", handleMainDelete);
+  const editMainContainer = document.createElement("span");
+  editMainContainer.className = "edit-main-container";
+
+  const editBtn = document.createElement("i");
+  editBtn.className = "far fa-edit";
+
+  editMainContainer.appendChild(editBtn);
+  editMainContainer.addEventListener("click", handleMainDelete);
 
   const main = document.createElement("h2");
   main.className = "maintodo__text";
   main.innerHTML = mainTodo;
 
   mainContainer.appendChild(today);
-  mainContainer.appendChild(deleteMain);
+  mainContainer.appendChild(editMainContainer);
   mainContainer.appendChild(main);
 }
 
