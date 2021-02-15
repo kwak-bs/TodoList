@@ -53,7 +53,7 @@ const toggleSetting = () => {
 };
 
 const setButtonLabel = (currentSetting) => {
-  darkmodeBtn.innerText = currentSetting === "dark" ? "🌕" : "🌑";
+  darkmodeBtn.innerText = currentSetting === "dark" ? "🌕" : "🌒";
 };
 
 darkmodeBtn.addEventListener("click", (evt) => {
